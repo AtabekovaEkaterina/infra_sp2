@@ -4,7 +4,7 @@ RUN mkdir /app
 
 COPY requirements.txt /app
 
-RUN apt-get update && apt-get -y install libpq-dev gcc 
+RUN apt-get update && apt-get -y install libpq-dev gcc
 
 RUN pip3 install -r /app/requirements.txt --no-cache-dir
 
