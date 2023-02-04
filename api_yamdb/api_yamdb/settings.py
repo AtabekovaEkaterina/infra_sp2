@@ -7,7 +7,7 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY="Katyakaterina"
+SECRET_KEY = "Katyakaterina"
 
 DEBUG = False
 
