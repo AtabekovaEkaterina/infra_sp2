@@ -42,12 +42,22 @@ YaMDB отправляет письмо с кодом подтверждения
 
 # Инструкция по запуску
 1. Склонируйте репозиторий git@github.com:AtabekovaEkaterina/infra_sp2.git.
-2. Зайдите в .env.examlpe и infa/env.example, прочитайти инструкцию для настройки переменных окружения.
+2. В дирктории проекта infa/ создайте файл .env, в котором необходимо прописать описание переменных окружения(скопируйте и вставьте следующий код в файл):
+```
+DB_NAME=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+DB_HOST=db
+DB_PORT=5432
+```
 3. Откройте приложение Docker и из директории проекта infa/ запустите docker-compose командой `docker-compose up`.
 4. Выполните миграции: `docker-compose exec web python manage.py makemigrations`, `docker-compose exec web python manage.py migrate`.
 5. Создайте суперпользователя `docker-compose exec web python manage.py createsuperuser`.
 6. Соберите статику: `docker-compose exec web python manage.py collectstatic --no-input`.
 7. Теперь приложение доступно по адресу http://localhost
+8. Для наполнения БД из фикстура, из директории проекта infa/ выполните команды:<br>
+- `docker cp fixtures.json <web container id>:app/` - скопирует файл с БД fixtures.json в контейнер.
+- `docker-compose exec web python manage.py loaddata fixtures.json` - загрузит данные БД из скопированного контейнер файла.
 
 # Примеры возможных запросов
 **GET получить информацию о произведении по id**<br>
