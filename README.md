@@ -42,7 +42,8 @@ YaMDB отправляет письмо с кодом подтверждения
 
 # Инструкция по запуску
 1. Склонируйте репозиторий 
-```git@github.com:AtabekovaEkaterina/infra_sp2.git
+```
+git@github.com:AtabekovaEkaterina/infra_sp2.git
 ```
 2. В дирктории проекта infa/ создайте файл .env, в котором необходимо прописать описание переменных окружения(скопируйте и вставьте следующий код в файл):
 ```
@@ -64,7 +65,8 @@ docker-compose exec web python manage.py makemigrations
 docker-compose exec web python manage.py migrate
 ```
 5. Создайте суперпользователя 
-```docker-compose exec web python manage.py createsuperuser
+```
+docker-compose exec web python manage.py createsuperuser
 ```
 6. Соберите статику
 ```
@@ -83,7 +85,7 @@ docker-compose exec web python manage.py loaddata fixtures.json
 
 # Примеры возможных запросов
 **GET получить информацию о произведении по id**<br>
-`http://127.0.0.1:8000/api/v1/titles/{titles_id}/`
+`http://localhost/api/v1/titles/{titles_id}/`
 <details><summary>Response 200 удачное выполнение запроса</summary>
 {<br>
   "id": 0,<br>
@@ -110,7 +112,7 @@ docker-compose exec web python manage.py loaddata fixtures.json
 </details>
 
 **POST добавление нового отзыва**<br>
-`http://127.0.0.1:8000/api/v1/titles/{title_id}/reviews/`
+`http://localhost/api/v1/titles/{title_id}/reviews/`
 <details><summary>Request</summary>
 {<br>
 "text": "string",<br>
