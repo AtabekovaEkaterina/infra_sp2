@@ -45,13 +45,14 @@ YaMDB отправляет письмо с кодом подтверждения
 ```
 git@github.com:AtabekovaEkaterina/infra_sp2.git
 ```
-2. В дирктории проекта infa/ создайте файл .env, в котором необходимо прописать описание переменных окружения(скопируйте и вставьте следующий код в файл):
+2. В дирктории проекта infa/ создайте файл .env, в котором необходимо прописать переменные окружения(скопируйте и вставьте следующий код в файл):
 ```
-DB_NAME=postgres
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-DB_HOST=db
-DB_PORT=5432
+DB_ENGINE=django.db.backends.postgresql # указываем, что работаем с postgresql
+DB_NAME=postgres # имя базы данных
+POSTGRES_USER=postgres # логин для подключения к базе данных
+POSTGRES_PASSWORD=postgres # пароль для подключения к БД (установите свой)
+DB_HOST=db # название контейнера
+DB_PORT=5432 # порт для подключения к БД
 ```
 3. Откройте приложение Docker и из директории проекта infa/ запустите docker-compose командой
 ```
